@@ -54,7 +54,7 @@ class ListingsController extends Controller
 
         $listing->save();
 
-        return redirect('/home')->with('success', 'Listing added');
+        return redirect('/home')->with('success', 'Listing Added');
     }
 
     /**
@@ -108,7 +108,7 @@ class ListingsController extends Controller
         $listing->user_id = auth()->user()->id;
 
         $listing->save();
-        return redirect('/home')->with('success', 'Listing updated');
+        return redirect('/home')->with('success', 'Listing Updated');
     }
 
     /**
@@ -120,5 +120,8 @@ class ListingsController extends Controller
     public function destroy($id)
     {
         //
+        $listing = Listing::find($id);
+        $listing->delete();
+        return redirect('/home')->with('success', 'Listing Deleted');
     }
 }
