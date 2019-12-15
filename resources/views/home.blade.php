@@ -19,10 +19,14 @@
                       <table class="table table-striped">
                         <tr>
                           <th>Company</th>
+                          <th></th>
+                          <th></th>
                         </tr>
                         @foreach($listings as $listing)
                           <tr>
                             <td>{{$listing->name}}</td>
+                            <td><a class="float-right btn btn-primary" href="/listings/{{$listing->id}}/edit">Edit</a></td>
+                            <td></td>
                           </tr>
                         @endforeach
                       </table>
